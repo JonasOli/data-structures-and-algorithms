@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // time complexity = O(log n)
-func binarySearch(arr [10]int, item int) int {
+func BinarySearch(arr [10]int, item int) int {
 	low := 0
 	high := len(arr) - 1
 
@@ -33,7 +33,7 @@ func main() {
 	fmt.Printf("Enter a number to search on the array: ")
 	fmt.Scanln(&itemToSearch)
 
-	res := binarySearch(intArr, itemToSearch)
+	res := BinarySearch(intArr, itemToSearch)
 
 	if res == -1 {
 		fmt.Printf("The result %v was not found on the array!\n", itemToSearch)
