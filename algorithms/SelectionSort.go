@@ -1,5 +1,7 @@
 package algorithms
 
+import "github.com/JonasOli/data-structures-and-algorithms/utils"
+
 type PlayList struct {
 	ArtistName string
 	PlayCount  int
@@ -11,16 +13,16 @@ func SelectionSort(list []PlayList) []PlayList {
 	var listLength int = len(list)
 
 	for i := 0; i < listLength; i++ {
-		biggerIndex := getBiggerValue(&list)
+		biggerIndex := getBiggerValueIndex(&list)
 
 		newArray = append(newArray, list[biggerIndex])
-		list = remove(list, biggerIndex)
+		list = utils.RemoveItemFromList(list, biggerIndex)
 	}
 
 	return newArray
 }
 
-func getBiggerValue(list *[]PlayList) int {
+func getBiggerValueIndex(list *[]PlayList) int {
 	var firstPlayList PlayList = (*list)[0]
 	biggerIndex := 0
 
@@ -32,9 +34,4 @@ func getBiggerValue(list *[]PlayList) int {
 	}
 
 	return biggerIndex
-}
-
-func remove(list []PlayList, idx int) []PlayList {
-	list[idx] = list[len(list)-1]
-	return list[:len(list)-1]
 }
