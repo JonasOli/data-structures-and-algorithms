@@ -1,4 +1,4 @@
-package main
+package dataStructures
 
 import "fmt"
 
@@ -85,19 +85,19 @@ func (list *LinkedList) Delete(item int) {
 	}
 }
 
-func main() {
-	list := LinkedList{}
+// func main() {
+// 	list := LinkedList{}
 
-	list.Insert(10)
-	list.Insert(20)
-	list.Insert(30)
-	list.Insert(40)
+// 	list.Insert(10)
+// 	list.Insert(20)
+// 	list.Insert(30)
+// 	list.Insert(40)
 
-	// list.Traverse()
+// 	// list.Traverse()
 
-	list.Search(20)
+// 	list.Search(20)
 
-	// list.Delete(10)
+// 	// list.Delete(10)
 
-	list.Traverse()
-}
+// 	list.Traverse()
+// }
