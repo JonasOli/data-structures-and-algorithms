@@ -1,20 +1,16 @@
-package tests
+package algorithms
 
-import (
-	"testing"
-
-	"github.com/JonasOli/data-structures-and-algorithms/algorithms"
-)
+import "testing"
 
 func Test_ShouldReturnTheCorrectElementOrdered(t *testing.T) {
-	playListArr := []algorithms.PlayList{
+	playListArr := []PlayList{
 		{ArtistName: "AC/DC", PlayCount: 111},
 		{ArtistName: "Metallica", PlayCount: 153},
 		{ArtistName: "Iron Maiden", PlayCount: 141},
 	}
 
-	newArr := algorithms.SelectionSort(playListArr)
-	playListOrderedExpected := []algorithms.PlayList{
+	newArr := SelectionSort(playListArr)
+	playListOrderedExpected := []PlayList{
 		{ArtistName: "Metallica", PlayCount: 153},
 		{ArtistName: "Iron Maiden", PlayCount: 141},
 		{ArtistName: "AC/DC", PlayCount: 111},
@@ -28,9 +24,9 @@ func Test_ShouldReturnTheCorrectElementOrdered(t *testing.T) {
 }
 
 func Test_ShouldReturnAnEmptyArrayIfSendingEmptyList(t *testing.T) {
-	playListArr := []algorithms.PlayList{}
+	playListArr := []PlayList{}
 
-	newArr := algorithms.SelectionSort(playListArr)
+	newArr := SelectionSort(playListArr)
 
 	if len(newArr) > 0 {
 		t.Errorf("The result %v is incorrect. Expected: %v", len(newArr), 0)
