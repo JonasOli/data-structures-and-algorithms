@@ -29,11 +29,11 @@ func BinarySearchRecursive(arr [10]int, item int, low int, high int) int {
 	if low > high {
 		return -1
 	}
-	
+
 	if guess == item {
 		return half
 	}
-	
+
 	if guess > item {
 		high = half - 1
 	} else {
@@ -42,4 +42,3 @@ func BinarySearchRecursive(arr [10]int, item int, low int, high int) int {
 
 	return BinarySearchRecursive(arr, item, low, high)
 }
-
