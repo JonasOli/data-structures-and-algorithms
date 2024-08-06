@@ -1,15 +1,20 @@
 package algorithms
 
-import "github.com/JonasOli/data-structures-and-algorithms/utils"
+import (
+	"math/rand/v2"
+
+	"github.com/JonasOli/data-structures-and-algorithms/utils"
+)
 
 func QuickSort(arr []int) []int {
 	if len(arr) < 2 {
 		return arr
 	}
 
-	var arrayHalfIdx int = len(arr) / 2
-	var pivot int = arr[arrayHalfIdx]
-	arr = utils.RemoveItemFromList(arr, arrayHalfIdx)
+	// If you select a random pivot, quicksort will be completed in an average time complexity of O(n log n)
+	var randomIdx int = rand.IntN(len(arr))
+	var pivot int = arr[randomIdx]
+	arr = utils.RemoveItemFromList(arr, randomIdx)
 	var smaller []int
 	var bigger []int
 
