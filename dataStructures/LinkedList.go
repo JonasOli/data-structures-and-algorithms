@@ -2,18 +2,18 @@ package dataStructures
 
 import "fmt"
 
-type Node struct {
-	data int
-	next *Node
+type Node[K int | string] struct {
+	data K
+	next *Node[K]
 }
 
-type LinkedList struct {
-	head *Node
+type LinkedList[K int | string] struct {
+	head *Node[K]
 }
 
 // O(1)
-func (list *LinkedList) Insert(data int) {
-	newNode := &Node{data: data}
+func (list *LinkedList[int]) Insert(data int) {
+	newNode := &Node[int]{data: data}
 
 	if list.head == nil {
 		list.head = newNode
@@ -29,7 +29,7 @@ func (list *LinkedList) Insert(data int) {
 }
 
 // O(n)
-func (list *LinkedList) Traverse() {
+func (list *LinkedList[int]) Traverse() {
 	current := list.head
 
 	fmt.Println(current.data)
@@ -42,7 +42,7 @@ func (list *LinkedList) Traverse() {
 }
 
 // O(n)
-func (list *LinkedList) Search(item int) {
+func (list *LinkedList[int]) Search(item int) {
 	current := list.head
 	idx := 0
 
@@ -64,7 +64,7 @@ func (list *LinkedList) Search(item int) {
 }
 
 // O(n)
-func (list *LinkedList) Delete(item int) {
+func (list *LinkedList[int]) Delete(item int) {
 	current := list.head
 
 	if current == nil {
